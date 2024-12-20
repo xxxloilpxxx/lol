@@ -1,12 +1,8 @@
 -- jave fun with source code niggers
 -- too lazy to fix the obfuscation shit 🖕
+-- fixed mopshub frontlines silent aim
 
-local ac = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChildOfClass("Actor")
-if not (ac) then return error("[silent aim error]: unable to find actor.") end
-
-if run_on_actor or run_on_thread then
-    (run_on_actor or run_on_thread)(ac, [[
-        if getgenv().con then getgenv().con:Disconnect() end
+if getgenv().con then getgenv().con:Disconnect() end
         if getgenv().fovCircle then getgenv().fovCircle:Remove() end
 
         local globals = getrenv()._G.globals
@@ -130,7 +126,3 @@ if run_on_actor or run_on_thread then
         old_exe_set = hookfunction(exe_set, function(...)
             return exe_set_proxy(...)
         end)
-    ]])
-else
-    error("executor not supported. (try awp.gg executor)")
-end
